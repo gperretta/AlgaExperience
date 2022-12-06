@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3AFE74F2293FD6E8005DAD52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE74F1293FD6E8005DAD52 /* AppDelegate.swift */; };
+		3AFE74F4293FD6E8005DAD52 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE74F3293FD6E8005DAD52 /* GameScene.sks */; };
+		3AFE74F6293FD6E8005DAD52 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE74F5293FD6E8005DAD52 /* Actions.sks */; };
+		3AFE74F8293FD6E8005DAD52 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE74F7293FD6E8005DAD52 /* GameScene.swift */; };
+		3AFE74FA293FD6E8005DAD52 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE74F9293FD6E8005DAD52 /* GameViewController.swift */; };
+		3AFE74FD293FD6E8005DAD52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE74FB293FD6E8005DAD52 /* Main.storyboard */; };
+		3AFE74FF293FD6E9005DAD52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE74FE293FD6E9005DAD52 /* Assets.xcassets */; };
+		3AFE7502293FD6E9005DAD52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE7500293FD6E9005DAD52 /* LaunchScreen.storyboard */; };
+		3AFE750C293FD6E9005DAD52 /* AlgaExperienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE750B293FD6E9005DAD52 /* AlgaExperienceTests.swift */; };
+		3AFE7516293FD6E9005DAD52 /* AlgaExperienceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE7515293FD6E9005DAD52 /* AlgaExperienceUITests.swift */; };
+		3AFE7518293FD6E9005DAD52 /* AlgaExperienceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE7517293FD6E9005DAD52 /* AlgaExperienceUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AFE7508293FD6E9005DAD52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AFE74E6293FD6E8005DAD52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AFE74ED293FD6E8005DAD52;
+			remoteInfo = AlgaExperience;
+		};
+		3AFE7512293FD6E9005DAD52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AFE74E6293FD6E8005DAD52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AFE74ED293FD6E8005DAD52;
+			remoteInfo = AlgaExperience;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3AFE74EE293FD6E8005DAD52 /* AlgaExperience.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlgaExperience.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AFE74F1293FD6E8005DAD52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3AFE74F3293FD6E8005DAD52 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		3AFE74F5293FD6E8005DAD52 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		3AFE74F7293FD6E8005DAD52 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		3AFE74F9293FD6E8005DAD52 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3AFE74FC293FD6E8005DAD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3AFE74FE293FD6E9005DAD52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AFE7501293FD6E9005DAD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3AFE7507293FD6E9005DAD52 /* AlgaExperienceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgaExperienceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AFE750B293FD6E9005DAD52 /* AlgaExperienceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgaExperienceTests.swift; sourceTree = "<group>"; };
+		3AFE7511293FD6E9005DAD52 /* AlgaExperienceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgaExperienceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AFE7515293FD6E9005DAD52 /* AlgaExperienceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgaExperienceUITests.swift; sourceTree = "<group>"; };
+		3AFE7517293FD6E9005DAD52 /* AlgaExperienceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgaExperienceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AFE74EB293FD6E8005DAD52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AFE7504293FD6E9005DAD52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AFE750E293FD6E9005DAD52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AFE74E5293FD6E8005DAD52 = {
+			isa = PBXGroup;
+			children = (
+				3AFE74F0293FD6E8005DAD52 /* AlgaExperience */,
+				3AFE750A293FD6E9005DAD52 /* AlgaExperienceTests */,
+				3AFE7514293FD6E9005DAD52 /* AlgaExperienceUITests */,
+				3AFE74EF293FD6E8005DAD52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3AFE74EF293FD6E8005DAD52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AFE74EE293FD6E8005DAD52 /* AlgaExperience.app */,
+				3AFE7507293FD6E9005DAD52 /* AlgaExperienceTests.xctest */,
+				3AFE7511293FD6E9005DAD52 /* AlgaExperienceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3AFE74F0293FD6E8005DAD52 /* AlgaExperience */ = {
+			isa = PBXGroup;
+			children = (
+				3AFE74F1293FD6E8005DAD52 /* AppDelegate.swift */,
+				3AFE74F3293FD6E8005DAD52 /* GameScene.sks */,
+				3AFE74F5293FD6E8005DAD52 /* Actions.sks */,
+				3AFE74F7293FD6E8005DAD52 /* GameScene.swift */,
+				3AFE74F9293FD6E8005DAD52 /* GameViewController.swift */,
+				3AFE74FB293FD6E8005DAD52 /* Main.storyboard */,
+				3AFE74FE293FD6E9005DAD52 /* Assets.xcassets */,
+				3AFE7500293FD6E9005DAD52 /* LaunchScreen.storyboard */,
+			);
+			path = AlgaExperience;
+			sourceTree = "<group>";
+		};
+		3AFE750A293FD6E9005DAD52 /* AlgaExperienceTests */ = {
+			isa = PBXGroup;
+			children = (
+				3AFE750B293FD6E9005DAD52 /* AlgaExperienceTests.swift */,
+			);
+			path = AlgaExperienceTests;
+			sourceTree = "<group>";
+		};
+		3AFE7514293FD6E9005DAD52 /* AlgaExperienceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3AFE7515293FD6E9005DAD52 /* AlgaExperienceUITests.swift */,
+				3AFE7517293FD6E9005DAD52 /* AlgaExperienceUITestsLaunchTests.swift */,
+			);
+			path = AlgaExperienceUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3AFE74ED293FD6E8005DAD52 /* AlgaExperience */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AFE751B293FD6E9005DAD52 /* Build configuration list for PBXNativeTarget "AlgaExperience" */;
+			buildPhases = (
+				3AFE74EA293FD6E8005DAD52 /* Sources */,
+				3AFE74EB293FD6E8005DAD52 /* Frameworks */,
+				3AFE74EC293FD6E8005DAD52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlgaExperience;
+			productName = AlgaExperience;
+			productReference = 3AFE74EE293FD6E8005DAD52 /* AlgaExperience.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3AFE7506293FD6E9005DAD52 /* AlgaExperienceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AFE751E293FD6E9005DAD52 /* Build configuration list for PBXNativeTarget "AlgaExperienceTests" */;
+			buildPhases = (
+				3AFE7503293FD6E9005DAD52 /* Sources */,
+				3AFE7504293FD6E9005DAD52 /* Frameworks */,
+				3AFE7505293FD6E9005DAD52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AFE7509293FD6E9005DAD52 /* PBXTargetDependency */,
+			);
+			name = AlgaExperienceTests;
+			productName = AlgaExperienceTests;
+			productReference = 3AFE7507293FD6E9005DAD52 /* AlgaExperienceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3AFE7510293FD6E9005DAD52 /* AlgaExperienceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AFE7521293FD6E9005DAD52 /* Build configuration list for PBXNativeTarget "AlgaExperienceUITests" */;
+			buildPhases = (
+				3AFE750D293FD6E9005DAD52 /* Sources */,
+				3AFE750E293FD6E9005DAD52 /* Frameworks */,
+				3AFE750F293FD6E9005DAD52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AFE7513293FD6E9005DAD52 /* PBXTargetDependency */,
+			);
+			name = AlgaExperienceUITests;
+			productName = AlgaExperienceUITests;
+			productReference = 3AFE7511293FD6E9005DAD52 /* AlgaExperienceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3AFE74E6293FD6E8005DAD52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					3AFE74ED293FD6E8005DAD52 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					3AFE7506293FD6E9005DAD52 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 3AFE74ED293FD6E8005DAD52;
+					};
+					3AFE7510293FD6E9005DAD52 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 3AFE74ED293FD6E8005DAD52;
+					};
+				};
+			};
+			buildConfigurationList = 3AFE74E9293FD6E8005DAD52 /* Build configuration list for PBXProject "AlgaExperience" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3AFE74E5293FD6E8005DAD52;
+			productRefGroup = 3AFE74EF293FD6E8005DAD52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AFE74ED293FD6E8005DAD52 /* AlgaExperience */,
+				3AFE7506293FD6E9005DAD52 /* AlgaExperienceTests */,
+				3AFE7510293FD6E9005DAD52 /* AlgaExperienceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3AFE74EC293FD6E8005DAD52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AFE74FD293FD6E8005DAD52 /* Main.storyboard in Resources */,
+				3AFE74F4293FD6E8005DAD52 /* GameScene.sks in Resources */,
+				3AFE74FF293FD6E9005DAD52 /* Assets.xcassets in Resources */,
+				3AFE7502293FD6E9005DAD52 /* LaunchScreen.storyboard in Resources */,
+				3AFE74F6293FD6E8005DAD52 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AFE7505293FD6E9005DAD52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AFE750F293FD6E9005DAD52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3AFE74EA293FD6E8005DAD52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AFE74F8293FD6E8005DAD52 /* GameScene.swift in Sources */,
+				3AFE74FA293FD6E8005DAD52 /* GameViewController.swift in Sources */,
+				3AFE74F2293FD6E8005DAD52 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AFE7503293FD6E9005DAD52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AFE750C293FD6E9005DAD52 /* AlgaExperienceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AFE750D293FD6E9005DAD52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AFE7516293FD6E9005DAD52 /* AlgaExperienceUITests.swift in Sources */,
+				3AFE7518293FD6E9005DAD52 /* AlgaExperienceUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AFE7509293FD6E9005DAD52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AFE74ED293FD6E8005DAD52 /* AlgaExperience */;
+			targetProxy = 3AFE7508293FD6E9005DAD52 /* PBXContainerItemProxy */;
+		};
+		3AFE7513293FD6E9005DAD52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AFE74ED293FD6E8005DAD52 /* AlgaExperience */;
+			targetProxy = 3AFE7512293FD6E9005DAD52 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3AFE74FB293FD6E8005DAD52 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AFE74FC293FD6E8005DAD52 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3AFE7500293FD6E9005DAD52 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AFE7501293FD6E9005DAD52 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3AFE7519293FD6E9005DAD52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3AFE751A293FD6E9005DAD52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3AFE751C293FD6E9005DAD52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CVSUPGMRAW;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gperretta.AlgaExperience;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3AFE751D293FD6E9005DAD52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CVSUPGMRAW;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gperretta.AlgaExperience;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3AFE751F293FD6E9005DAD52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CVSUPGMRAW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gperretta.AlgaExperienceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlgaExperience.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AlgaExperience";
+			};
+			name = Debug;
+		};
+		3AFE7520293FD6E9005DAD52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CVSUPGMRAW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gperretta.AlgaExperienceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlgaExperience.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AlgaExperience";
+			};
+			name = Release;
+		};
+		3AFE7522293FD6E9005DAD52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CVSUPGMRAW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gperretta.AlgaExperienceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AlgaExperience;
+			};
+			name = Debug;
+		};
+		3AFE7523293FD6E9005DAD52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CVSUPGMRAW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gperretta.AlgaExperienceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AlgaExperience;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3AFE74E9293FD6E8005DAD52 /* Build configuration list for PBXProject "AlgaExperience" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AFE7519293FD6E9005DAD52 /* Debug */,
+				3AFE751A293FD6E9005DAD52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AFE751B293FD6E9005DAD52 /* Build configuration list for PBXNativeTarget "AlgaExperience" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AFE751C293FD6E9005DAD52 /* Debug */,
+				3AFE751D293FD6E9005DAD52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AFE751E293FD6E9005DAD52 /* Build configuration list for PBXNativeTarget "AlgaExperienceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AFE751F293FD6E9005DAD52 /* Debug */,
+				3AFE7520293FD6E9005DAD52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AFE7521293FD6E9005DAD52 /* Build configuration list for PBXNativeTarget "AlgaExperienceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AFE7522293FD6E9005DAD52 /* Debug */,
+				3AFE7523293FD6E9005DAD52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3AFE74E6293FD6E8005DAD52 /* Project object */;
+}
