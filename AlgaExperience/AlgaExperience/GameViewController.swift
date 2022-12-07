@@ -13,29 +13,26 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // root view:
         if let view = self.view as! SKView? {
-            let scene = GameScene()
-            scene.scaleMode = .aspectFill
-            
-            view.presentScene(scene)
-            
-            view.ignoresSiblingOrder = true
-            
+            let scene = GameScene(size: view.bounds.size)
+            // display frame rate indicator and node counter:
             view.showsFPS = true
             view.showsNodeCount = true
+            // note: sibling objects are rendered in array order
+            // -> useful when we'll need overlapping objects!
+            view.ignoresSiblingOrder = false
+            // the scene is automatically resized to match the view dimension
+            scene.scaleMode = .resizeFill
+            // forse da rivedere: qual è il migliore scaleMode?
+            // e.g.: .aspectFill potrebbe tagliare la scena etc
+            
+            view.presentScene(scene)
         }
     }
 
     override var shouldAutorotate: Bool {
         return true
-    }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
     }
 
     override var prefersStatusBarHidden: Bool {

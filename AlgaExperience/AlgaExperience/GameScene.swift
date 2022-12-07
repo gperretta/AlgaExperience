@@ -8,9 +8,11 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    
+    // creating a sprite
 
     override func didMove(to view: SKView) {
-            // This is where you will set up your game scene.
+            // setting up your game scene
     }
 
 }
