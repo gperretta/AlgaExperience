@@ -11,8 +11,8 @@ import Foundation
 enum Images {
     
     // placeholder(s)
-    static let background = "seabg"
-    static let character = "corgi"
+    static let background = "sceneBackground"
+    static let character = "pianta"
     static let enemy = "evilcat"
 }
 

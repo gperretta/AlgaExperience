@@ -123,7 +123,9 @@ extension GameScene {
         addChild(character)
         
         // character body physics [approx. with a rectangle]
-        character.physicsBody = SKPhysicsBody(rectangleOf: character.size)
+        character.physicsBody = SKPhysicsBody(
+            rectangleOf: CGSize(width: character.size.width/3.5, height: character.size.height/2.5),
+            center: CGPoint(x: 0.3, y: 0.5))
         character.physicsBody?.isDynamic = true
         character.physicsBody?.categoryBitMask = Category.character
         character.physicsBody?.contactTestBitMask = Category.enemy
