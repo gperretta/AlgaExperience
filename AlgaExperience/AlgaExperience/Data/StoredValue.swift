@@ -10,10 +10,12 @@ import Foundation
 // just for convenience
 enum Images {
     
-    // placeholder(s)
     static let background = "sceneBackground"
 //    static let character = "pianta"
     static let enemy = "evilcat"
+    static let pause = "pauseButton"
+    static let resume = "playButton"
+    static let bordo = "bordo"
 }
 
 // Z axis (visual hierarchy)
@@ -24,6 +26,7 @@ enum Layer {
     static let enemy : CGFloat = 1
     static let effect : CGFloat = 2
     static let border : CGFloat = 3
+    static let buttons : CGFloat = 4
 }
 
 // Physics categories for collision detection (bitmask)

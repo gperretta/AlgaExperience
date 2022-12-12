@@ -119,6 +119,13 @@ extension GameScene {
         background.zPosition = Layer.background
         background.size = CGSize(width: size.width, height: size.height)
         addChild(background)
+        
+        let bordo = SKSpriteNode(imageNamed: Images.bordo)
+        bordo.anchorPoint = CGPoint(x: 0, y: 0)
+        bordo.position = CGPoint(x: 0, y: 0)
+        bordo.zPosition = Layer.border
+        bordo.size = CGSize(width: size.width, height: size.height)
+        addChild(bordo)
     }
     // main character:
     func addMainCharacter(zPos : CGFloat) {
@@ -132,10 +139,9 @@ extension GameScene {
     }
     // opponents:
     func addEnemies() {
-      
-        let enemy = SKSpriteNode(imageNamed: Images.enemy)
+        let enemy = BUGnaby()
         enemy.name = "enemies"
-        enemy.size = CGSize(width: size.width/18, height: size.height/14)
+        enemy.size = CGSize(width: 0.1*(size.width), height: 0.2*(size.height))
         // DA RIVEDERE questa parte perché da qui inizia tanto codice inutile sec me
         // questa è l'unica alternativa che sono stata capace di trovare rn LOL
         let xRight = size.width + enemy.size.width/2
@@ -159,6 +165,7 @@ extension GameScene {
         }
         // add the child after checking its position:
         addChild(enemy)
+        enemy.walk()
         // enemies body physics [approx. with a rectangle]
         enemy.physicsBody = SKPhysicsBody(rectangleOf: enemy.size)
         enemy.physicsBody?.isDynamic = true
@@ -413,29 +420,25 @@ extension GameScene {
     func displayUIBar() {
         
         addPauseButton()
-        showLivesLeft()
-        showScore()
+        //showLivesLeft()
+        //showScore()
     }
     
     func addPauseButton() {
         
-        let pauseButton = SKLabelNode()
+        let pauseButton = SKSpriteNode(imageNamed: Images.pause)
         pauseButton.name = "pausebtn"
-        pauseButton.text = "PAUSE"
-        pauseButton.fontSize = 28
-        pauseButton.color = .white
-        pauseButton.position = CGPoint(x: size.width - 0.1*(size.width), y: size.height - 0.9*(size.height))
+        pauseButton.position = CGPoint(x: size.width - 0.1*(size.width), y: 0.9*(size.height))
+        pauseButton.zPosition = Layer.buttons
         addChild(pauseButton)
     }
     
     func addResumeButton() {
         
-        let resumeButton = SKLabelNode()
+        let resumeButton = SKSpriteNode(imageNamed: Images.resume)
         resumeButton.name = "resumebtn"
-        resumeButton.text = "RESUME"
-        resumeButton.fontSize = 28
-        resumeButton.color = .white
-        resumeButton.position = CGPoint(x: size.width - 0.1*(size.width), y: size.height - 0.9*(size.height))
+        resumeButton.position = CGPoint(x: size.width - 0.1*(size.width), y: 0.9*(size.height))
+        resumeButton.zPosition = Layer.buttons
         addChild(resumeButton)
     }
     
@@ -443,9 +446,9 @@ extension GameScene {
         
         livesLeftBar.name = "livesBar"
         livesLeftBar.text = "LIVES: \(livesLeft)/3"
-        livesLeftBar.fontSize = 28
+        livesLeftBar.fontSize = 32
         livesLeftBar.color = SKColor.white
-        livesLeftBar.position = CGPoint(x: 0.1*(size.width), y: 0.9*(size.height))
+        livesLeftBar.position = CGPoint(x: 0.1*(size.width), y: 0.85*(size.height))
         addChild(livesLeftBar)
     }
     

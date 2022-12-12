@@ -20,6 +20,7 @@
 		3AFE7518293FD6E9005DAD52 /* AlgaExperienceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE7517293FD6E9005DAD52 /* AlgaExperienceUITestsLaunchTests.swift */; };
 		7909DDF429473A8F00AA0BE5 /* MainCharacterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7909DDF329473A8F00AA0BE5 /* MainCharacterNode.swift */; };
 		7909DDF629473B6800AA0BE5 /* TextureFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7909DDF529473B6800AA0BE5 /* TextureFunction.swift */; };
+		7909DDF8294748D600AA0BE5 /* BUGnaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7909DDF7294748D600AA0BE5 /* BUGnaby.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		3AFE7517293FD6E9005DAD52 /* AlgaExperienceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgaExperienceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7909DDF329473A8F00AA0BE5 /* MainCharacterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCharacterNode.swift; sourceTree = "<group>"; };
 		7909DDF529473B6800AA0BE5 /* TextureFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureFunction.swift; sourceTree = "<group>"; };
+		7909DDF7294748D600AA0BE5 /* BUGnaby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BUGnaby.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				3AF53A6329453ABA00B33ACC /* StoredValue.swift */,
 				7909DDF329473A8F00AA0BE5 /* MainCharacterNode.swift */,
 				7909DDF529473B6800AA0BE5 /* TextureFunction.swift */,
+				7909DDF7294748D600AA0BE5 /* BUGnaby.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7909DDF8294748D600AA0BE5 /* BUGnaby.swift in Sources */,
 				7909DDF429473A8F00AA0BE5 /* MainCharacterNode.swift in Sources */,
 				3A81618529453B8F007C5B2A /* GameOverScene.swift in Sources */,
 				7909DDF629473B6800AA0BE5 /* TextureFunction.swift in Sources */,
@@ -483,7 +487,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CVSUPGMRAW;
+				DEVELOPMENT_TEAM = G7CZ577JT2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -497,7 +501,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gperretta.AlgaExperience;
+				PRODUCT_BUNDLE_IDENTIFIER = adironza.AlgaExperience;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -512,7 +516,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CVSUPGMRAW;
+				DEVELOPMENT_TEAM = G7CZ577JT2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -526,7 +530,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gperretta.AlgaExperience;
+				PRODUCT_BUNDLE_IDENTIFIER = adironza.AlgaExperience;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
