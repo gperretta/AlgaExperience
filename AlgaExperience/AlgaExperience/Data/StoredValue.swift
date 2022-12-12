@@ -11,8 +11,6 @@ import Foundation
 enum Images {
     
     static let background = "sceneBackground"
-//    static let character = "pianta"
-    static let enemy = "evilcat"
     static let pause = "pauseButton"
     static let resume = "playButton"
     static let bordo = "bordo"

@@ -197,7 +197,7 @@ extension GameScene {
             self.run(SKAction.repeatForever(SKAction.sequence([
                 SKAction.wait(forDuration: TimeConstant.waitTime/2),
                 SKAction.run(self.addEnemies),
-                SKAction.wait(forDuration: TimeConstant.waitTime)
+                SKAction.wait(forDuration: TimeConstant.waitTime/2)
             ])
             ))
         }
@@ -291,7 +291,7 @@ extension GameScene {
             enemiesDestroyed+=1
             print("Score: \(enemiesDestroyed)")
 
-            if enemiesDestroyed > 10 {   // just for the test sake
+            if enemiesDestroyed > 100 {   // just for the test sake
                   run(SKAction.run() {
                       let reveal = SKTransition.push(with: .up, duration: 0.25)
                       let scene = GameOverScene(size: self.size, won: true)
@@ -301,43 +301,6 @@ extension GameScene {
         }
       }
     }
-    
-//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//      super.touchesMoved(touches, with: event)
-//
-//        guard let touch = touches.first
-//        else { return }
-//        touchLocation = touch.location(in: self)
-//
-//        tracePoints.append(touchLocation)
-//        redrawSwipeTrace()
-//    }
-//
-//    func removeEnemiesFromScene() {
-//
-//        // if the user swipes on the selected  node (enemies):
-//        let nodeSelected = nodes(at: touchLocation)
-//        for node in nodeSelected {
-//          if node.name == "enemies" {
-//            node.name = nil
-//            node.physicsBody?.isDynamic = false
-//
-//            let fadeOut = SKAction.fadeOut(withDuration: 0.2)
-//            let sequence = SKAction.sequence([fadeOut, .removeFromParent()])
-//            node.run(sequence)
-//            enemiesDestroyed+=1
-//            print("Score: \(enemiesDestroyed)")
-//
-//            if enemiesDestroyed > 10 {   // just for the test sake
-//                  run(SKAction.run() {
-//                      let reveal = SKTransition.push(with: .up, duration: 0.25)
-//                      let scene = GameOverScene(size: self.size, won: true)
-//                      self.view?.presentScene(scene, transition: reveal)
-//                    })
-//              }
-//        }
-//      }
-//    }
 }
 
 //MARK: -Swipe visual effect (extension)
