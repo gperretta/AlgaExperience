@@ -60,12 +60,13 @@ class GameScene: SKScene {
         didSet { livesLeftBar.text = "LIVES: \(livesLeft)/3" }
     }
     var livesLeftBar = SKLabelNode()
+    var touchLocation : CGPoint = CGPoint(x: 0, y: 0)
     
     override func didMove(to view: SKView) {
             
         // scene and main character node rendering:
         setBackground()
-        addMainCharacter()
+        addMainCharacter(zPos: Layer.character)
         // (not) to deal with some physics:
         setScenePhysics()
         // enemies wave:
@@ -81,9 +82,12 @@ class GameScene: SKScene {
         enemy.removeFromParent()
         livesLeft -= 1
         print("Leaves: \(livesLeft)")  // just for the test sake
+        //
+        //if livesLeft == 2 {reverse animation}
+        //if livesLeft == 1 {reverse animation}
+        //
         if livesLeft == 0 {
             character.removeFromParent()
-            
             run(SKAction.sequence([
                 SKAction.wait(forDuration: 0.25),
                 SKAction.run() {
@@ -94,7 +98,11 @@ class GameScene: SKScene {
             ]))
         } else if livesLeft > 0 {
             character.removeFromParent()
-            addMainCharacter()
+            addMainCharacter(zPos: Layer.border)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                print("Waiting time ended after 2 s")
+                
+            }
         }
     }
 }
@@ -113,22 +121,14 @@ extension GameScene {
         addChild(background)
     }
     // main character:
-    func addMainCharacter() {
-      
-        let character = SKSpriteNode(imageNamed: Images.character)
-        character.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        character.position = CGPoint(x: size.width/2, y: size.height/2)
-        character.zPosition = Layer.character
-        character.size = CGSize(width: size.width/9, height: size.height/7)
-        addChild(character)
-        
-        // character body physics [approx. with a rectangle]
-        character.physicsBody = SKPhysicsBody(
-            rectangleOf: CGSize(width: character.size.width/3.5, height: character.size.height/2.5),
-            center: CGPoint(x: 0.3, y: 0.5))
-        character.physicsBody?.isDynamic = true
-        character.physicsBody?.categoryBitMask = Category.character
-        character.physicsBody?.contactTestBitMask = Category.enemy
+    func addMainCharacter(zPos : CGFloat) {
+        let pianta = MainCharacterNode()
+        pianta.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        pianta.position = CGPoint(x: size.width/2, y: size.height/2)
+        pianta.size = CGSize(width: 0.5*(pianta.size.width), height: 0.5*(pianta.size.height))
+        pianta.zPosition = zPos
+        addChild(pianta)
+        pianta.goesOut()
     }
     // opponents:
     func addEnemies() {
@@ -173,7 +173,7 @@ extension GameScene {
     // enemies movement from their starting position to the mc:
     func setMovemement(node: SKSpriteNode) {
         
-        let movementDuration = Double.random(in: (TimeConstant.minSpeed)...(TimeConstant.maxSpeed))
+        let movementDuration = Double.random(in: (TimeConstant.minDuration)...(TimeConstant.maxDuration))
 
         let actionMove = SKAction.move(to: CGPoint(x: size.width/2, y: size.height/2),
                                      duration: movementDuration)
@@ -183,12 +183,18 @@ extension GameScene {
     }
     // endless loop for the waves of enemies generation:
     func setLoop() {
-        
-        run(SKAction.repeatForever(SKAction.sequence([
-                SKAction.run(addEnemies),
+        print("Sprout generation waiting time...")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            print("Waiting time ended after 2 s")
+            
+            self.run(SKAction.repeatForever(SKAction.sequence([
+                SKAction.wait(forDuration: TimeConstant.waitTime/2),
+                SKAction.run(self.addEnemies),
                 SKAction.wait(forDuration: TimeConstant.waitTime)
-                ])
+            ])
             ))
+        }
+//     }
     }
     // note: world physics is different from body physics!
     func setScenePhysics() {
@@ -257,11 +263,11 @@ extension GameScene {
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
       super.touchesMoved(touches, with: event)
-        
+
         guard let touch = touches.first
         else { return }
         let location = touch.location(in: self)
-    
+
         tracePoints.append(location)
         redrawSwipeTrace()
 
@@ -271,13 +277,13 @@ extension GameScene {
           if node.name == "enemies" {
             node.name = nil
             node.physicsBody?.isDynamic = false
-            
+
             let fadeOut = SKAction.fadeOut(withDuration: 0.2)
             let sequence = SKAction.sequence([fadeOut, .removeFromParent()])
             node.run(sequence)
             enemiesDestroyed+=1
             print("Score: \(enemiesDestroyed)")
-            
+
             if enemiesDestroyed > 10 {   // just for the test sake
                   run(SKAction.run() {
                       let reveal = SKTransition.push(with: .up, duration: 0.25)
@@ -288,6 +294,43 @@ extension GameScene {
         }
       }
     }
+    
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//      super.touchesMoved(touches, with: event)
+//
+//        guard let touch = touches.first
+//        else { return }
+//        touchLocation = touch.location(in: self)
+//
+//        tracePoints.append(touchLocation)
+//        redrawSwipeTrace()
+//    }
+//
+//    func removeEnemiesFromScene() {
+//
+//        // if the user swipes on the selected  node (enemies):
+//        let nodeSelected = nodes(at: touchLocation)
+//        for node in nodeSelected {
+//          if node.name == "enemies" {
+//            node.name = nil
+//            node.physicsBody?.isDynamic = false
+//
+//            let fadeOut = SKAction.fadeOut(withDuration: 0.2)
+//            let sequence = SKAction.sequence([fadeOut, .removeFromParent()])
+//            node.run(sequence)
+//            enemiesDestroyed+=1
+//            print("Score: \(enemiesDestroyed)")
+//
+//            if enemiesDestroyed > 10 {   // just for the test sake
+//                  run(SKAction.run() {
+//                      let reveal = SKTransition.push(with: .up, duration: 0.25)
+//                      let scene = GameOverScene(size: self.size, won: true)
+//                      self.view?.presentScene(scene, transition: reveal)
+//                    })
+//              }
+//        }
+//      }
+//    }
 }
 
 //MARK: -Swipe visual effect (extension)
@@ -416,4 +459,5 @@ extension GameScene {
         addChild(scoreBar)
     }
 }
+
 

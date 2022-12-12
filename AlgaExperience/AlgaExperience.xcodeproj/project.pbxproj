@@ -18,6 +18,8 @@
 		3AFE750C293FD6E9005DAD52 /* AlgaExperienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE750B293FD6E9005DAD52 /* AlgaExperienceTests.swift */; };
 		3AFE7516293FD6E9005DAD52 /* AlgaExperienceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE7515293FD6E9005DAD52 /* AlgaExperienceUITests.swift */; };
 		3AFE7518293FD6E9005DAD52 /* AlgaExperienceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE7517293FD6E9005DAD52 /* AlgaExperienceUITestsLaunchTests.swift */; };
+		7909DDF429473A8F00AA0BE5 /* MainCharacterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7909DDF329473A8F00AA0BE5 /* MainCharacterNode.swift */; };
+		7909DDF629473B6800AA0BE5 /* TextureFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7909DDF529473B6800AA0BE5 /* TextureFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		3AFE7511293FD6E9005DAD52 /* AlgaExperienceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgaExperienceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFE7515293FD6E9005DAD52 /* AlgaExperienceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgaExperienceUITests.swift; sourceTree = "<group>"; };
 		3AFE7517293FD6E9005DAD52 /* AlgaExperienceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgaExperienceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7909DDF329473A8F00AA0BE5 /* MainCharacterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCharacterNode.swift; sourceTree = "<group>"; };
+		7909DDF529473B6800AA0BE5 /* TextureFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				3AF53A6329453ABA00B33ACC /* StoredValue.swift */,
+				7909DDF329473A8F00AA0BE5 /* MainCharacterNode.swift */,
+				7909DDF529473B6800AA0BE5 /* TextureFunction.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -294,7 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7909DDF429473A8F00AA0BE5 /* MainCharacterNode.swift in Sources */,
 				3A81618529453B8F007C5B2A /* GameOverScene.swift in Sources */,
+				7909DDF629473B6800AA0BE5 /* TextureFunction.swift in Sources */,
 				3AFE74F8293FD6E8005DAD52 /* GameScene.swift in Sources */,
 				3AFE74FA293FD6E8005DAD52 /* GameViewController.swift in Sources */,
 				3AF53A6429453ABA00B33ACC /* StoredValue.swift in Sources */,

@@ -12,7 +12,7 @@ enum Images {
     
     // placeholder(s)
     static let background = "sceneBackground"
-    static let character = "pianta"
+//    static let character = "pianta"
     static let enemy = "evilcat"
 }
 
@@ -36,8 +36,9 @@ enum Category {
 
 enum TimeConstant {
     
-    static let minSpeed : Double = 2    // enemies
-    static let maxSpeed : Double = 3.5    // enemies
-    static let waitTime : TimeInterval = 0.7  // enemies wave gen.
+    static let minDuration : Double = 3   // enemies
+    static let maxDuration : Double = 6   // enemies
+    static let waitTime : TimeInterval = 1  // enemies wave gen.
 }
+
 
