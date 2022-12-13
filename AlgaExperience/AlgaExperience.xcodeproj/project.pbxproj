@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3A81618529453B8F007C5B2A /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A81618429453B8F007C5B2A /* GameOverScene.swift */; };
+		3AAD6A6D29489B0200768435 /* ModernDOS8x16.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AAD6A6829489B0200768435 /* ModernDOS8x16.ttf */; };
+		3AAD6A6E29489B0200768435 /* ModernDOS8x14.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AAD6A6929489B0200768435 /* ModernDOS8x14.ttf */; };
+		3AAD6A6F29489B0200768435 /* ModernDOS9x14.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AAD6A6A29489B0200768435 /* ModernDOS9x14.ttf */; };
+		3AAD6A7029489B0200768435 /* ModernDOS9x16.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AAD6A6B29489B0200768435 /* ModernDOS9x16.ttf */; };
+		3AAD6A7129489B0200768435 /* ModernDOS8x8.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AAD6A6C29489B0200768435 /* ModernDOS8x8.ttf */; };
 		3AF53A6429453ABA00B33ACC /* StoredValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF53A6329453ABA00B33ACC /* StoredValue.swift */; };
 		3AFE74F2293FD6E8005DAD52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE74F1293FD6E8005DAD52 /* AppDelegate.swift */; };
 		3AFE74F8293FD6E8005DAD52 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE74F7293FD6E8005DAD52 /* GameScene.swift */; };
@@ -43,6 +48,12 @@
 
 /* Begin PBXFileReference section */
 		3A81618429453B8F007C5B2A /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		3AAD6A6829489B0200768435 /* ModernDOS8x16.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ModernDOS8x16.ttf; sourceTree = "<group>"; };
+		3AAD6A6929489B0200768435 /* ModernDOS8x14.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ModernDOS8x14.ttf; sourceTree = "<group>"; };
+		3AAD6A6A29489B0200768435 /* ModernDOS9x14.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ModernDOS9x14.ttf; sourceTree = "<group>"; };
+		3AAD6A6B29489B0200768435 /* ModernDOS9x16.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ModernDOS9x16.ttf; sourceTree = "<group>"; };
+		3AAD6A6C29489B0200768435 /* ModernDOS8x8.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ModernDOS8x8.ttf; sourceTree = "<group>"; };
+		3AAD6A7229489BC400768435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3AF53A6329453ABA00B33ACC /* StoredValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredValue.swift; sourceTree = "<group>"; };
 		3AFE74EE293FD6E8005DAD52 /* AlgaExperience.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlgaExperience.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFE74F1293FD6E8005DAD52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +136,27 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		3AAD6A6629489AE000768435 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3AAD6A6729489B0200768435 /* font */,
+				3AFE74FE293FD6E9005DAD52 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3AAD6A6729489B0200768435 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				3AAD6A6829489B0200768435 /* ModernDOS8x16.ttf */,
+				3AAD6A6929489B0200768435 /* ModernDOS8x14.ttf */,
+				3AAD6A6A29489B0200768435 /* ModernDOS9x14.ttf */,
+				3AAD6A6B29489B0200768435 /* ModernDOS9x16.ttf */,
+				3AAD6A6C29489B0200768435 /* ModernDOS8x8.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		3AFE74E5293FD6E8005DAD52 = {
 			isa = PBXGroup;
 			children = (
@@ -148,12 +180,13 @@
 		3AFE74F0293FD6E8005DAD52 /* AlgaExperience */ = {
 			isa = PBXGroup;
 			children = (
+				3AAD6A7229489BC400768435 /* Info.plist */,
+				3AAD6A6629489AE000768435 /* Resources */,
 				3A81618929453CE8007C5B2A /* Data */,
 				3A81618829453CB7007C5B2A /* Controller */,
 				3A81618729453C76007C5B2A /* Scenes */,
 				3A81618629453C54007C5B2A /* Storyboard */,
 				3AFE74F1293FD6E8005DAD52 /* AppDelegate.swift */,
-				3AFE74FE293FD6E9005DAD52 /* Assets.xcassets */,
 			);
 			path = AlgaExperience;
 			sourceTree = "<group>";
@@ -281,7 +314,12 @@
 			files = (
 				3AFE74FD293FD6E8005DAD52 /* Main.storyboard in Resources */,
 				3AFE74FF293FD6E9005DAD52 /* Assets.xcassets in Resources */,
+				3AAD6A6F29489B0200768435 /* ModernDOS9x14.ttf in Resources */,
 				3AFE7502293FD6E9005DAD52 /* LaunchScreen.storyboard in Resources */,
+				3AAD6A7029489B0200768435 /* ModernDOS9x16.ttf in Resources */,
+				3AAD6A6D29489B0200768435 /* ModernDOS8x16.ttf in Resources */,
+				3AAD6A6E29489B0200768435 /* ModernDOS8x14.ttf in Resources */,
+				3AAD6A7129489B0200768435 /* ModernDOS8x8.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,8 +529,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G7CZ577JT2;
+				DEVELOPMENT_TEAM = CVSUPGMRAW;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlgaExperience/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -505,7 +544,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = adironza.AlgaExperience;
+				PRODUCT_BUNDLE_IDENTIFIER = gperretta.AlgaExperience;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -522,6 +561,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CVSUPGMRAW;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlgaExperience/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

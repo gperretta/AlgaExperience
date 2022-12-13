@@ -59,7 +59,7 @@ class GameScene: SKScene {
     var livesLeft = 3 {
         didSet { livesLeftBar.text = "LIVES: \(livesLeft)/3" }
     }
-    var livesLeftBar = SKLabelNode()
+    var livesLeftBar = SKLabelNode(fontNamed: "Modern DOS 9x16")
     var touchLocation : CGPoint = CGPoint(x: 0, y: 0)
     
     override func didMove(to view: SKView) {
@@ -408,10 +408,10 @@ extension GameScene {
     func showLivesLeft() {
         
         livesLeftBar.name = "livesBar"
-        livesLeftBar.text = "LIVES: \(livesLeft)/3"
+        livesLeftBar.text = "Lives: \(livesLeft)/3"
         livesLeftBar.fontSize = 32
         livesLeftBar.color = SKColor.white
-        livesLeftBar.position = CGPoint(x: 0.1*(size.width), y: 0.85*(size.height))
+        livesLeftBar.position = CGPoint(x: 0.15*(size.width), y: 0.85*(size.height))
         addChild(livesLeftBar)
     }
     
