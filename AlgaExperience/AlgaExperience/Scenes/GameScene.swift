@@ -91,9 +91,9 @@ class GameScene: SKScene {
             run(SKAction.sequence([
                 SKAction.wait(forDuration: 0.25),
                 SKAction.run() {
-                let reveal = SKTransition.push(with: .up, duration: 0.25)
+                    let reveal = SKTransition.flipHorizontal(withDuration: 0.25)
                 let scene = GameOverScene(size: self.size, won: false)
-                self.view?.presentScene(scene, transition: reveal)
+                    self.view?.presentScene(scene, transition: reveal)
               }
             ]))
         } else if livesLeft > 0 {

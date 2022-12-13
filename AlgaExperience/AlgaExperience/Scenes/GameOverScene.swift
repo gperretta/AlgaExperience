@@ -13,16 +13,15 @@ class GameOverScene: SKScene {
   init(size: CGSize, won:Bool) {
     super.init(size: size)
     // DA DECIDERE
-    backgroundColor = SKColor.white
-    // based on the parameter:
-    let message = won ? "YOU WON 🥳" : "YOU LOST ☹️"    //placeholder
-    // label node = text on the screen with SpriteKit
-    let resultText = SKLabelNode()
-    resultText.text = message
-    resultText.fontSize = 40
-    resultText.fontColor = SKColor.black
-    resultText.position = CGPoint(x: size.width/2, y: size.height/2)
-    addChild(resultText)
+    backgroundColor = SKColor.black
+      
+      let background2 = SKSpriteNode(imageNamed: Images.background2)
+      background2.anchorPoint = CGPoint(x: 0, y: 0)
+      background2.position = CGPoint(x: 0, y: 0)
+      background2.zPosition = Layer.background
+      background2.size = CGSize(width: size.width, height: size.height)
+      addChild(background2)
+
     
     run(SKAction.sequence([
       // wait for 3 sec and run
