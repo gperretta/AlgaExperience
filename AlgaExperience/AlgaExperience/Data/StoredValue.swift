@@ -12,6 +12,7 @@ enum Images {
     
     static let background = "sceneBackground"
     static let background2 = "gameOver"
+    static let background3 = "lorebackground"
     static let pause = "pauseButton"
     static let resume = "playButton"
     static let bordo = "bordo"

@@ -50,6 +50,8 @@ var traceBg : SKShapeNode!
 var traceFg : SKShapeNode!
 var tracePoints : [CGPoint] = []
 
+var firstLaunch : Bool = true
+
 class GameScene: SKScene {
 
     var enemiesDestroyed = 0 {
@@ -63,7 +65,13 @@ class GameScene: SKScene {
     var touchLocation : CGPoint = CGPoint(x: 0, y: 0)
     
     override func didMove(to view: SKView) {
-            
+        //lancia la lore screen sfruttando il controllo sul booleano first Launch
+        if firstLaunch {
+            let reveal = SKTransition.flipHorizontal(withDuration: 0.25)
+            let sceneLore = LoreScene(size: self.size)
+            self.view?.presentScene(sceneLore, transition: reveal)
+            firstLaunch = false
+        }
         // scene and main character node rendering:
         setBackground()
         addMainCharacter(zPos: Layer.character)
@@ -141,7 +149,7 @@ extension GameScene {
     func addEnemies() {
         let enemy = BUGnaby()
         enemy.name = "enemies"
-        enemy.size = CGSize(width: 0.1*(size.width), height: 0.2*(size.height))
+        enemy.size = CGSize(width: 0.07*(size.width), height: 0.15*(size.height))
         // DA RIVEDERE questa parte perché da qui inizia tanto codice inutile sec me
         // questa è l'unica alternativa che sono stata capace di trovare rn LOL
         let xRight = size.width + enemy.size.width/2
