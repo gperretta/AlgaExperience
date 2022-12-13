@@ -10,37 +10,50 @@ import SpriteKit
 
 class GameOverScene: SKScene {
   
+ //MARK: -Init
+    
+   // il parametro 'won' serviva per differenziare vittoria/sconfitta
   init(size: CGSize, won:Bool) {
     super.init(size: size)
-    // DA DECIDERE
     backgroundColor = SKColor.black
       
-      let background2 = SKSpriteNode(imageNamed: Images.background2)
-      background2.anchorPoint = CGPoint(x: 0, y: 0)
-      background2.position = CGPoint(x: 0, y: 0)
-      background2.zPosition = Layer.background
-      background2.size = CGSize(width: size.width, height: size.height)
-      addChild(background2)
-
-    
-    run(SKAction.sequence([
-      // wait for 3 sec and run
-      SKAction.wait(forDuration: 3.0),
-      SKAction.run() { [weak self] in
-        // transition to a new scene in SpriteKit
-        guard let `self` = self
-        else { return }
-        // add some transition:
-        let reveal = SKTransition.push(with: .up, duration: 0.25)
-        let scene = GameScene(size: size)
-        self.view?.presentScene(scene, transition:reveal)
-      }
-      ]))
+      let gameOverText = SKLabelNode(fontNamed: "Modern DOS 9x16")
+      gameOverText.text = "GAME OVER"
+      gameOverText.fontSize = 72
+      gameOverText.fontColor = SKColor.white
+      gameOverText.position = CGPoint(x: size.width/2, y:  0.75*(size.height))
+      addChild(gameOverText)
+      
+      let retryButton = SKSpriteNode(imageNamed: Images.retry)
+      retryButton.name = "retrybtn"
+      retryButton.position = CGPoint(x: size.width/2, y:  0.25*(size.height))
+      addChild(retryButton)
    }
-  
   // override an initializer:
   required init(coder aDecoder: NSCoder) {
     fatalError("dummy text bc it won't be called")
   }
-}
+    
+ //MARK: -Touch handling
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      super.touchesBegan(touches, with: event)
 
+        guard let touch = touches.first
+        else { return }
+        let nodeClicked = atPoint(touch.location(in: self))
+        // if the user taps on retry button:
+        if nodeClicked.name == "retrybtn" {
+            
+            run(SKAction.run() { [weak self] in
+                // transition to a new scene in SpriteKit
+                guard let `self` = self
+                else { return }
+                // add some transition:
+                let reveal = SKTransition.push(with: .up, duration: 0.25)
+                let scene = GameScene(size: self.size)
+                self.view?.presentScene(scene, transition:reveal)
+              }
+              )
+          }
+      }
+}

@@ -16,15 +16,14 @@ class LoreScene: SKScene {
     backgroundColor = SKColor.black
       
       let background3 = SKSpriteNode(imageNamed: Images.background3)
-        background3.anchorPoint = CGPoint(x: 0, y: 0)
-        background3.position = CGPoint(x: 35, y: 70)
+        background3.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        background3.position = CGPoint(x: size.width/2, y: size.height/2)
         background3.zPosition = Layer.background
-        background3.size = CGSize(width: (size.width)*0.95, height: (size.height)*0.7)
+        background3.size = CGSize(width: (size.width)*0.9, height: (size.height)*0.45)
       addChild(background3)
 
     
     run(SKAction.sequence([
-      // wait for 3 sec and run
       SKAction.wait(forDuration: 5.0),
       SKAction.run() { [weak self] in
         // transition to a new scene in SpriteKit

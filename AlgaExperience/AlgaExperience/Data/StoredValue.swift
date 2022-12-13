@@ -12,9 +12,10 @@ enum Images {
     
     static let background = "sceneBackground"
     static let background2 = "gameOver"
-    static let background3 = "lorebackground"
+    static let background3 = "loreBackground"
     static let pause = "pauseButton"
     static let resume = "playButton"
+    static let retry = "retryButton"
     static let bordo = "bordo"
 }
 
@@ -24,7 +25,7 @@ enum Layer {
     static let background : CGFloat = 0
     static let character : CGFloat = 1
     static let enemy : CGFloat = 1
-    static let effect : CGFloat = 2
+    static let effect : CGFloat = 3
     static let border : CGFloat = 3
     static let buttons : CGFloat = 4
 }

@@ -203,9 +203,8 @@ extension GameScene {
             print("Waiting time ended after 2 s")
             
             self.run(SKAction.repeatForever(SKAction.sequence([
-                SKAction.wait(forDuration: TimeConstant.waitTime/2),
                 SKAction.run(self.addEnemies),
-                SKAction.wait(forDuration: TimeConstant.waitTime/2)
+                SKAction.wait(forDuration: TimeConstant.waitTime)
             ])
             ))
         }
@@ -318,13 +317,13 @@ extension GameScene {
     func setSwipeTrace() {
         
         traceBg = SKShapeNode()
-        traceBg.zPosition = Layer.effect
-        traceBg.lineWidth = 5.0
-        traceBg.strokeColor = UIColor(red: 0.0, green: 0.9, blue: 1.0, alpha: 1.0)
+        traceBg.zPosition = Layer.border
+        traceBg.lineWidth = 4.0
+        traceBg.strokeColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
       
         traceFg = SKShapeNode()
-        traceFg.zPosition = Layer.effect
-        traceFg.lineWidth = 3.0
+        traceFg.zPosition = Layer.border
+        traceFg.lineWidth = 2.0
         traceFg.strokeColor = .white
       
        addChild(traceBg)
