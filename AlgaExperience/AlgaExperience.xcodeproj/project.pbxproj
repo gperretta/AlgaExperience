@@ -21,6 +21,7 @@
 		7909DDF429473A8F00AA0BE5 /* MainCharacterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7909DDF329473A8F00AA0BE5 /* MainCharacterNode.swift */; };
 		7909DDF629473B6800AA0BE5 /* TextureFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7909DDF529473B6800AA0BE5 /* TextureFunction.swift */; };
 		7909DDF8294748D600AA0BE5 /* BUGnaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7909DDF7294748D600AA0BE5 /* BUGnaby.swift */; };
+		792C6EB3294889A6006D8F8F /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792C6EB2294889A6006D8F8F /* SplashController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		7909DDF329473A8F00AA0BE5 /* MainCharacterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCharacterNode.swift; sourceTree = "<group>"; };
 		7909DDF529473B6800AA0BE5 /* TextureFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureFunction.swift; sourceTree = "<group>"; };
 		7909DDF7294748D600AA0BE5 /* BUGnaby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BUGnaby.swift; sourceTree = "<group>"; };
+		792C6EB2294889A6006D8F8F /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		3A81618829453CB7007C5B2A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				792C6EB2294889A6006D8F8F /* SplashController.swift */,
 				3AFE74F9293FD6E8005DAD52 /* GameViewController.swift */,
 			);
 			path = Controller;
@@ -311,6 +314,7 @@
 				3AFE74FA293FD6E8005DAD52 /* GameViewController.swift in Sources */,
 				3AF53A6429453ABA00B33ACC /* StoredValue.swift in Sources */,
 				3AFE74F2293FD6E8005DAD52 /* AppDelegate.swift in Sources */,
+				792C6EB3294889A6006D8F8F /* SplashController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +491,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CVSUPGMRAW;
+				DEVELOPMENT_TEAM = G7CZ577JT2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -501,7 +505,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gperretta.AlgaExperience;
+				PRODUCT_BUNDLE_IDENTIFIER = adironza.AlgaExperience;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
