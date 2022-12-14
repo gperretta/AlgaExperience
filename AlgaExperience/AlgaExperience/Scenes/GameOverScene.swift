@@ -16,6 +16,8 @@ class GameOverScene: SKScene {
   init(size: CGSize, won:Bool) {
     super.init(size: size)
     backgroundColor = SKColor.black
+      let hScore = UserDefaults.standard.integer(forKey: "highScore")
+      let score = UserDefaults.standard.integer(forKey: "score")
       
       let gameOverText = SKLabelNode(fontNamed: "Modern DOS 9x16")
       gameOverText.text = "GAME OVER"
@@ -23,6 +25,22 @@ class GameOverScene: SKScene {
       gameOverText.fontColor = SKColor.white
       gameOverText.position = CGPoint(x: size.width/2, y:  0.75*(size.height))
       addChild(gameOverText)
+      
+      let ScoreText = SKLabelNode(fontNamed: "Modern DOS 9x16")
+      ScoreText.text = "SCORE: \(score)"
+      ScoreText.fontSize = 42
+      ScoreText.fontColor = SKColor.white
+      ScoreText.position = CGPoint(x: size.width/2, y:  0.60*(size.height))
+      addChild(ScoreText)
+      
+      let HighScoreText = SKLabelNode(fontNamed: "Modern DOS 9x16")
+      HighScoreText.text = "HIGHSCORE: \(hScore)"
+      HighScoreText.fontSize = 42
+      HighScoreText.fontColor = SKColor.white
+      HighScoreText.position = CGPoint(x: size.width/2, y:  0.50*(size.height))
+      addChild(HighScoreText)
+      
+      
       
       let retryButton = SKSpriteNode(imageNamed: Images.retry)
       retryButton.name = "retrybtn"

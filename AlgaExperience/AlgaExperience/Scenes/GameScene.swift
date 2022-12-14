@@ -6,6 +6,11 @@
 //
 
 import SpriteKit
+import CoreData
+import Foundation
+import SwiftUI
+
+
 
 //MARK: -Operator overloading
 
@@ -53,7 +58,8 @@ var tracePoints : [CGPoint] = []
 var firstLaunch : Bool = true
 
 class GameScene: SKScene {
-
+    var highScore : Int = 0
+    
     var invulTime: TimeInterval = 0.0
     var isInvincible = false
 
@@ -93,6 +99,7 @@ class GameScene: SKScene {
     func enemyCollideAttack(enemy: SKSpriteNode, character: SKSpriteNode) {
         print("COLLIDE ATTACK SUCCEDED")
         enemy.removeFromParent()
+        let score = enemiesDestroyed
         livesLeft -= 1
         isInvincible = true
         print("Leaves: \(livesLeft)")  // just for the test sake
@@ -102,6 +109,13 @@ class GameScene: SKScene {
         //
         if livesLeft == 0 {
             character.removeFromParent()
+            if(enemiesDestroyed>highScore){
+                highScore = score
+                UserDefaults.standard.set(highScore, forKey: "highScore")
+                UserDefaults.standard.set(score, forKey: "score")
+            } else {
+                UserDefaults.standard.set(score, forKey: "score")
+            }
             run(SKAction.sequence([
                 SKAction.wait(forDuration: 0.25),
                 SKAction.run() {

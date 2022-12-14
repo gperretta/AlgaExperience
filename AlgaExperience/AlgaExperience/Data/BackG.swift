@@ -35,7 +35,7 @@ class BackG : SKSpriteNode {
         guard let animateTextures = animateTextures else{
             preconditionFailure("Could not find Texture!")
         }
-        startAnimations(textures: animateTextures, speed: 0.30, name: BackgAnimationType.animate.rawValue, count: 1, resize: false, restore: false)
+        startAnimations(textures: animateTextures, speed: 0.10, name: BackgAnimationType.animate.rawValue, count: 1, resize: false, restore: false)
   }
 }
 

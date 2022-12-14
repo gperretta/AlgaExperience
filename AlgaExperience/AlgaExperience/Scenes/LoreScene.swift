@@ -25,7 +25,7 @@ class LoreScene: SKScene {
 
     
     run(SKAction.sequence([
-      SKAction.wait(forDuration: 21.5),
+      SKAction.wait(forDuration: 11.5), //was 21.5
       SKAction.run() { [weak self] in
         // transition to a new scene in SpriteKit
         guard let `self` = self
