@@ -48,14 +48,14 @@ class BUGnaby : SKSpriteNode {
     }
     
     //implemantazione azione camminata
-    func walk()
+    func walk(spriteSpeed: Double)
     {
         //check for textures
         guard let walkTextures = walkTextures else{
             preconditionFailure("Could not find Texture!")
         }
         //run te animation forever
-        startAnimations(textures: walkTextures, speed: 0.25, name: EnemyAnimationType.walk.rawValue, count: 0, resize: false, restore: false)
+        startAnimations(textures: walkTextures, speed: spriteSpeed, name: EnemyAnimationType.walk.rawValue, count: 0, resize: false, restore: false)
         //the higher speed the longer the frame displayed
   }
 }

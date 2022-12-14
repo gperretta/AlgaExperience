@@ -151,7 +151,7 @@ extension GameScene {
     func addEnemies() {
         let enemy = BUGnaby()
         enemy.name = "enemies"
-        enemy.size = CGSize(width: 0.07*(size.width), height: 0.15*(size.height))
+        enemy.size = CGSize(width: 40, height: 40)
         // DA RIVEDERE questa parte perché da qui inizia tanto codice inutile sec me
         // questa è l'unica alternativa che sono stata capace di trovare rn LOL
         let xRight = size.width + enemy.size.width/2
@@ -168,14 +168,15 @@ extension GameScene {
             enemy.position = CGPoint(x: xRange, y: yBottom)
         case (3) :
             enemy.position = CGPoint(x: xRight, y: yRange)
+            enemy.xScale = -1.0
         case (4) :
             enemy.position = CGPoint(x: xLeft, y: yRange)
         default:
             enemy.position = CGPoint(x: xRange, y: yTop)
+            enemy.xScale = -1.0
         }
         // add the child after checking its position:
         addChild(enemy)
-        enemy.walk()
         // enemies body physics [approx. with a rectangle]
         enemy.physicsBody = SKPhysicsBody(rectangleOf: enemy.size)
         enemy.physicsBody?.isDynamic = true
@@ -185,18 +186,20 @@ extension GameScene {
         enemy.physicsBody?.collisionBitMask = Category.none
         enemy.physicsBody?.usesPreciseCollisionDetection = true // bc they're fast!
         
-        setMovemement(node: enemy)
+        enemy.walk(spriteSpeed: setMovemement(node: enemy))
     }
     // enemies movement from their starting position to the mc:
-    func setMovemement(node: SKSpriteNode) {
+    func setMovemement(node: SKSpriteNode) -> Double {
         
-        let movementDuration = Double.random(in: (TimeConstant.minDuration)...(TimeConstant.maxDuration))
+        var movementDuration = Double.random(in: ((TimeConstant.minDuration)-(Double(enemiesDestroyed)*0.1))...((TimeConstant.maxDuration)-(Double(enemiesDestroyed)*0.01)))
 
         let actionMove = SKAction.move(to: CGPoint(x: size.width/2, y: size.height/2),
                                      duration: movementDuration)
         let actionMoveDone = SKAction.removeFromParent()
 
         node.run(SKAction.sequence([actionMove, actionMoveDone]))
+        
+        return movementDuration
     }
     // endless loop for the waves of enemies generation:
     func setLoop() {
@@ -206,7 +209,7 @@ extension GameScene {
             
             self.run(SKAction.repeatForever(SKAction.sequence([
                 SKAction.run(self.addEnemies),
-                SKAction.wait(forDuration: TimeConstant.waitTime)
+                SKAction.wait(forDuration: (TimeConstant.waitTime-Double(self.enemiesDestroyed)*0.01))
             ])
             ))
         }
