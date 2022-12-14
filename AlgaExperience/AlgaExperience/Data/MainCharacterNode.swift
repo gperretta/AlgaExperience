@@ -21,17 +21,17 @@ class MainCharacterNode : SKSpriteNode {
     //per l'inizializzazione delle texture
     init() {
         //set a default texture
-        let texture = SKTexture(imageNamed: "pianta2")
+       let texture = SKTexture(imageNamed: "pianta2")
 
-        super.init(texture: texture, color: .clear, size: texture.size())
+       super.init(texture: texture, color: .clear, size: texture.size())
         
         //qua stai settando le animation texture(senza ancora animarle) chiamando la funzione loadtexture
-        self.goesOutTextures = loadTexture(atlas: "pianta", prefix: "pianta", startsAt: 2, stopsAt: 13)
+       self.goesOutTextures = loadTexture(atlas: "pianta", prefix: "pianta", startsAt: 2, stopsAt: 13)
         
-        self.name = "pianta"
+       self.name = "pianta"
 
         // character body physics [approx. with a rectangle]
-        self.physicsBody = SKPhysicsBody(
+       self.physicsBody = SKPhysicsBody(
             rectangleOf: CGSize(width: 0.3*(self.size.width), height: 0.2*(self.size.height)),
             center: CGPoint(x: 0.3, y: 0.5))
         self.physicsBody?.isDynamic = true

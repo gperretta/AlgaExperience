@@ -29,6 +29,7 @@
 		792C6EB3294889A6006D8F8F /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792C6EB2294889A6006D8F8F /* SplashController.swift */; };
 		792C6EB92948E541006D8F8F /* LoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792C6EB82948E541006D8F8F /* LoreScene.swift */; };
 		792C6EBB2949D52D006D8F8F /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 792C6EBA2949D52D006D8F8F /* bgMusic.mp3 */; };
+		792C6EC0294A828D006D8F8F /* BackG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792C6EBF294A828D006D8F8F /* BackG.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		792C6EB2294889A6006D8F8F /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		792C6EB82948E541006D8F8F /* LoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoreScene.swift; sourceTree = "<group>"; };
 		792C6EBA2949D52D006D8F8F /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
+		792C6EBF294A828D006D8F8F /* BackG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackG.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				7909DDF329473A8F00AA0BE5 /* MainCharacterNode.swift */,
 				7909DDF529473B6800AA0BE5 /* TextureFunction.swift */,
 				7909DDF7294748D600AA0BE5 /* BUGnaby.swift */,
+				792C6EBF294A828D006D8F8F /* BackG.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				3A81618529453B8F007C5B2A /* GameOverScene.swift in Sources */,
 				7909DDF629473B6800AA0BE5 /* TextureFunction.swift in Sources */,
 				3AFE74F8293FD6E8005DAD52 /* GameScene.swift in Sources */,
+				792C6EC0294A828D006D8F8F /* BackG.swift in Sources */,
 				3AFE74FA293FD6E8005DAD52 /* GameViewController.swift in Sources */,
 				3AF53A6429453ABA00B33ACC /* StoredValue.swift in Sources */,
 				3AFE74F2293FD6E8005DAD52 /* AppDelegate.swift in Sources */,
