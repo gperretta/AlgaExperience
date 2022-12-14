@@ -54,6 +54,9 @@ var firstLaunch : Bool = true
 
 class GameScene: SKScene {
 
+    var invulTime: TimeInterval = 0.0
+    var isInvincible = false
+
     var enemiesDestroyed = 0 {
         didSet { scoreBar.text = "SCORE: \(enemiesDestroyed)" }
     }
@@ -91,6 +94,7 @@ class GameScene: SKScene {
         print("COLLIDE ATTACK SUCCEDED")
         enemy.removeFromParent()
         livesLeft -= 1
+        isInvincible = true
         print("Leaves: \(livesLeft)")  // just for the test sake
         //
         //if livesLeft == 2 {reverse animation}
@@ -151,7 +155,7 @@ extension GameScene {
     func addEnemies() {
         let enemy = BUGnaby()
         enemy.name = "enemies"
-        enemy.size = CGSize(width: 40, height: 40)
+        enemy.size = CGSize(width: 52, height: 52)
         // DA RIVEDERE questa parte perché da qui inizia tanto codice inutile sec me
         // questa è l'unica alternativa che sono stata capace di trovare rn LOL
         let xRight = size.width + enemy.size.width/2
@@ -161,6 +165,7 @@ extension GameScene {
         let yTop = size.height + enemy.size.height/2
         let yBottom = -(yTop)
         let flag : Int = Int.random(in: 1...4)
+        
         switch flag {
         case (1) :
             enemy.position = CGPoint(x: xRange, y: yTop)
@@ -397,7 +402,9 @@ extension GameScene: SKPhysicsContactDelegate {
           (secondBody.categoryBitMask & Category.enemy != 0)) {
       if let enemy = firstBody.node as? SKSpriteNode,
         let character = secondBody.node as? SKSpriteNode {
-          enemyCollideAttack(enemy: enemy, character: character)
+          if !isInvincible {
+              enemyCollideAttack(enemy: enemy, character: character)
+          }
       }
     }
   }
@@ -451,6 +458,17 @@ extension GameScene {
         scoreBar.position = CGPoint(x: size.width - 0.1*(size.width), y: 0.9*(size.height))
         addChild(scoreBar)
     }
-}
+    
+   // MARK: -Managing Invul
+       override func update(_ currentTime: TimeInterval) {
+           if isInvincible {
+               invulTime += 0.1
+           }
+           if (invulTime > 10){
+               invulTime = 0
+               isInvincible = false
+           }
+       }
+   }
 
 

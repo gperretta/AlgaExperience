@@ -32,11 +32,12 @@ class MainCharacterNode : SKSpriteNode {
 
         // character body physics [approx. with a rectangle]
         self.physicsBody = SKPhysicsBody(
-            rectangleOf: CGSize(width: self.size.width/3.5, height: self.size.height/2.5),
+            rectangleOf: CGSize(width: 0.3*(self.size.width), height: 0.2*(self.size.height)),
             center: CGPoint(x: 0.3, y: 0.5))
         self.physicsBody?.isDynamic = true
         self.physicsBody?.categoryBitMask = Category.character
         self.physicsBody?.contactTestBitMask = Category.enemy
+        self.physicsBody?.collisionBitMask = Category.none
     }
     //usato per inizializzare sprite da scene file
     required init?(coder aDecoder: NSCoder)
