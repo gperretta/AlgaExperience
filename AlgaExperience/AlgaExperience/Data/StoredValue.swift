@@ -40,7 +40,7 @@ enum Category {
 
 enum TimeConstant {
     
-    static let minDuration : Double = 6   // enemies
+    static let minDuration : Double = 1   // enemies
     static let maxDuration : Double = 6   // enemies
     static let waitTime : TimeInterval = 1  // enemies wave gen.
 }

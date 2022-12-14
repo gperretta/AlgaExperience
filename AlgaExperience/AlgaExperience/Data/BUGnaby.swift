@@ -35,7 +35,7 @@ class BUGnaby : SKSpriteNode {
         
         // character body physics [approx. with a rectangle]
         self.physicsBody = SKPhysicsBody(
-            rectangleOf: CGSize(width: self.size.width/3.5, height: self.size.height/2.5),
+            rectangleOf: CGSize(width: self.size.width, height: self.size.height),
             center: CGPoint(x: 0.3, y: 0.5))
         self.physicsBody?.isDynamic = true
         self.physicsBody?.categoryBitMask = Category.character

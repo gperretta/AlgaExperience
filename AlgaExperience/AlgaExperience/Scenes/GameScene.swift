@@ -186,12 +186,16 @@ extension GameScene {
         enemy.physicsBody?.collisionBitMask = Category.none
         enemy.physicsBody?.usesPreciseCollisionDetection = true // bc they're fast!
         
-        enemy.walk(spriteSpeed: setMovemement(node: enemy))
+       // enemy.walk(spriteSpeed: setMovemement(node: enemy))
+        enemy.walk(spriteSpeed: (setMovemement(node: enemy)*0.01))
+
     }
     // enemies movement from their starting position to the mc:
     func setMovemement(node: SKSpriteNode) -> Double {
         
-        var movementDuration = Double.random(in: ((TimeConstant.minDuration)-(Double(enemiesDestroyed)*0.1))...((TimeConstant.maxDuration)-(Double(enemiesDestroyed)*0.01)))
+//        let movementDuration = Double.random(in: ((TimeConstant.minDuration)-(Double(enemiesDestroyed)))...((TimeConstant.maxDuration)-(Double(enemiesDestroyed)*0.5)))
+        
+        let movementDuration = TimeConstant.maxDuration-Double(enemiesDestroyed)*0.03
 
         let actionMove = SKAction.move(to: CGPoint(x: size.width/2, y: size.height/2),
                                      duration: movementDuration)
@@ -199,7 +203,7 @@ extension GameScene {
 
         node.run(SKAction.sequence([actionMove, actionMoveDone]))
         
-        return movementDuration
+        return (movementDuration)
     }
     // endless loop for the waves of enemies generation:
     func setLoop() {
@@ -209,7 +213,7 @@ extension GameScene {
             
             self.run(SKAction.repeatForever(SKAction.sequence([
                 SKAction.run(self.addEnemies),
-                SKAction.wait(forDuration: (TimeConstant.waitTime-Double(self.enemiesDestroyed)*0.01))
+                SKAction.wait(forDuration: (TimeConstant.waitTime-Double(self.enemiesDestroyed)*0.02))
             ])
             ))
         }
