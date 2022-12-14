@@ -29,9 +29,7 @@ class MainCharacterNode : SKSpriteNode {
         self.goesOutTextures = loadTexture(atlas: "pianta", prefix: "pianta", startsAt: 2, stopsAt: 13)
         
         self.name = "pianta"
-        //self.zPosition = Layer.character
-        //self.size = CGSize(width: size.width/5, height: size.height/4)
-        
+
         // character body physics [approx. with a rectangle]
         self.physicsBody = SKPhysicsBody(
             rectangleOf: CGSize(width: self.size.width/3.5, height: self.size.height/2.5),
@@ -45,7 +43,7 @@ class MainCharacterNode : SKSpriteNode {
     {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    // MARK: -GoesOut
     //implemantazione azione camminata
     func goesOut()
     {

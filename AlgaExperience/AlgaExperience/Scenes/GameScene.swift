@@ -74,7 +74,7 @@ class GameScene: SKScene {
         }
         // scene and main character node rendering:
         setBackground()
-        addMainCharacter(zPos: Layer.character)
+        addMainCharacter()
         // (not) to deal with some physics:
         setScenePhysics()
         // enemies wave:
@@ -106,7 +106,7 @@ class GameScene: SKScene {
             ]))
         } else if livesLeft > 0 {
             character.removeFromParent()
-            addMainCharacter(zPos: Layer.border)
+            addMainCharacter()
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 print("Waiting time ended after 2 s")
                 
@@ -136,12 +136,12 @@ extension GameScene {
         addChild(bordo)
     }
     // main character:
-    func addMainCharacter(zPos : CGFloat) {
+    func addMainCharacter() {
         let pianta = MainCharacterNode()
         pianta.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         pianta.position = CGPoint(x: size.width/2, y: size.height/2)
         pianta.size = CGSize(width: 0.5*(pianta.size.width), height: 0.5*(pianta.size.height))
-        pianta.zPosition = zPos
+        pianta.zPosition = Layer.character
         addChild(pianta)
         pianta.goesOut()
     }
@@ -287,26 +287,30 @@ extension GameScene {
 
         // if the user swipes on the selected  node (enemies):
         let nodeSelected = nodes(at: location)
+        if !isPaused{
         for node in nodeSelected {
-          if node.name == "enemies" {
-            node.name = nil
-            node.physicsBody?.isDynamic = false
-
-            let fadeOut = SKAction.fadeOut(withDuration: 0.2)
-            let sequence = SKAction.sequence([fadeOut, .removeFromParent()])
-            node.run(sequence)
-            enemiesDestroyed+=1
-            print("Score: \(enemiesDestroyed)")
-
-            if enemiesDestroyed > 100 {   // just for the test sake
-                  run(SKAction.run() {
-                      let reveal = SKTransition.push(with: .up, duration: 0.25)
-                      let scene = GameOverScene(size: self.size, won: true)
-                      self.view?.presentScene(scene, transition: reveal)
+    
+            if node.name == "enemies" {
+                node.name = nil
+                node.physicsBody?.isDynamic = false
+                
+                let fadeOut = SKAction.fadeOut(withDuration: 0.2)
+                let sequence = SKAction.sequence([fadeOut, .removeFromParent()])
+                node.run(sequence)
+                enemiesDestroyed+=1
+                print("Score: \(enemiesDestroyed)")
+                
+                if enemiesDestroyed > 100 {   // just for the test sake
+                    run(SKAction.run() {
+                        let reveal = SKTransition.push(with: .up, duration: 0.25)
+                        let scene = GameOverScene(size: self.size, won: true)
+                        self.view?.presentScene(scene, transition: reveal)
                     })
-              }
+                }
+            }
         }
       }
+        else{return}
     }
 }
 
@@ -339,19 +343,25 @@ extension GameScene {
             return
         }
         // max swipe lenght:
-        while tracePoints.count > 12 {
+        while tracePoints.count > 5 {
             tracePoints.remove(at: 0)
         }
-      
+        //aggiungo if per rendere il path non funzionante in pausa: se il gioco è in pausa il path non è visibile e i nemici hanno collisione
         let bezierPath = UIBezierPath()
-        bezierPath.move(to: tracePoints[0])
-        // draw swipe trace:
-        for i in 0..<tracePoints.count {
-            bezierPath.addLine(to: tracePoints[i])
-        }
-      
-        traceBg.path = bezierPath.cgPath
-        traceFg.path = bezierPath.cgPath
+        if !isPaused{
+            bezierPath.move(to: tracePoints[0])
+            // draw swipe trace:
+            for i in 0..<tracePoints.count {
+                bezierPath.addLine(to: tracePoints[i])
+            }
+            
+            traceBg.path = bezierPath.cgPath
+            traceFg.path = bezierPath.cgPath }
+        
+        else{
+                traceBg.path = nil
+                traceFg.path = nil
+            }
     }
 }
 
