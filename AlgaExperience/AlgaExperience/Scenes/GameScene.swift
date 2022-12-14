@@ -63,6 +63,7 @@ class GameScene: SKScene {
     }
     var livesLeftBar = SKLabelNode(fontNamed: "Modern DOS 9x16")
     var touchLocation : CGPoint = CGPoint(x: 0, y: 0)
+    let musicNode = SKAudioNode(fileNamed: "bgMusic")
     
     override func didMove(to view: SKView) {
         //lancia la lore screen sfruttando il controllo sul booleano first Launch
@@ -82,6 +83,7 @@ class GameScene: SKScene {
         // user interactions:
         setSwipeTrace()
         displayUIBar()
+        addChild(musicNode)
     }
     
     // core mechanic:
@@ -242,6 +244,7 @@ extension GameScene {
               // invece di rimuovere/ricreare il nodo ma,,,
               nodeClicked.removeFromParent()
               addResumeButton()
+              musicNode.isPaused = true
           }
           // & resume button:
           else if nodeClicked.name == "resumebtn" {
@@ -408,7 +411,7 @@ extension GameScene {
         
         let pauseButton = SKSpriteNode(imageNamed: Images.pause)
         pauseButton.name = "pausebtn"
-        pauseButton.position = CGPoint(x: size.width - 0.1*(size.width), y: 0.9*(size.height))
+        pauseButton.position = CGPoint(x: size.width - 0.095*(size.width), y: 0.93*(size.height))
         pauseButton.zPosition = Layer.buttons
         addChild(pauseButton)
     }
@@ -417,7 +420,7 @@ extension GameScene {
         
         let resumeButton = SKSpriteNode(imageNamed: Images.resume)
         resumeButton.name = "resumebtn"
-        resumeButton.position = CGPoint(x: size.width - 0.1*(size.width), y: 0.9*(size.height))
+        resumeButton.position = CGPoint(x: size.width - 0.095*(size.width), y: 0.93*(size.height))
         resumeButton.zPosition = Layer.buttons
         addChild(resumeButton)
     }
