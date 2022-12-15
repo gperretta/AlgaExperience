@@ -20,12 +20,14 @@ class LoreScene: SKScene {
         background3.position = CGPoint(x: size.width/2, y: size.height/2)
         background3.zPosition = Layer.background
         background3.size = CGSize(width: size.width, height: (size.height)*1.2)
+        let typeNode = SKAudioNode(fileNamed: "textMusic1")
         addChild(background3)
+        addChild(typeNode)
         background3.animate()
 
     
     run(SKAction.sequence([
-      SKAction.wait(forDuration: 8.5), //was 21.5
+      SKAction.wait(forDuration: 7.5), //was 21.5
       SKAction.run() { [weak self] in
         // transition to a new scene in SpriteKit
         guard let `self` = self

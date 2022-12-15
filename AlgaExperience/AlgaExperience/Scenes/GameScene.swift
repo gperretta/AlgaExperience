@@ -9,6 +9,7 @@ import SpriteKit
 import CoreData
 import Foundation
 import SwiftUI
+import AVFoundation
 
 
 
@@ -50,7 +51,7 @@ func random(min: CGFloat, max: CGFloat) -> CGFloat {
 }
 
 //MARK: -Init GameScene class
-
+var audioPlayer = AVAudioPlayer()
 var traceBg : SKShapeNode!
 var traceFg : SKShapeNode!
 var tracePoints : [CGPoint] = []
@@ -74,6 +75,11 @@ class GameScene: SKScene {
     var livesLeftBar = SKLabelNode(fontNamed: "Modern DOS 9x16")
     var touchLocation : CGPoint = CGPoint(x: 0, y: 0)
     let musicNode = SKAudioNode(fileNamed: "bgMusic")
+    let hitSound = SKAction.playSoundFileNamed("enemydeadMusic", waitForCompletion: false)
+        let pauseButtonSound = SKAction.playSoundFileNamed("pauseMusic", waitForCompletion: false)
+        let plantHitSound = SKAction.playSoundFileNamed("Impact3", waitForCompletion: false)
+        let SwipeSound = SKAction.playSoundFileNamed("Swipe18", waitForCompletion: false)
+        let tikSound = SKAudioNode(fileNamed: "tiktik")
     
     override func didMove(to view: SKView) {
         //lancia la lore screen sfruttando il controllo sul booleano first Launch
@@ -104,10 +110,8 @@ class GameScene: SKScene {
         livesLeft -= 1
         isInvincible = true
         print("Leaves: \(livesLeft)")
-        //
-        //
-        //
-        //
+        run(plantHitSound)
+        
         if livesLeft == 0 {
             character.removeFromParent()
             if(enemiesDestroyed>highScore){
@@ -123,15 +127,12 @@ class GameScene: SKScene {
                     let reveal = SKTransition.flipHorizontal(withDuration: 0.25)
                 let scene = GameOverScene(size: self.size, won: false)
                     self.view?.presentScene(scene, transition: reveal)
+                    audioPlayer.stop()
               }
             ]))
         } else if livesLeft > 0 {
             character.removeFromParent()
             addMainCharacter()
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                print("Waiting time ended after 2 s")
-//
-//            }
         }
     }
 }
@@ -213,8 +214,6 @@ extension GameScene {
     // enemies movement from their starting position to the mc:
     func setMovemement(node: SKSpriteNode) -> Double {
         
-//        let movementDuration = Double.random(in: ((TimeConstant.minDuration)-(Double(enemiesDestroyed)))...((TimeConstant.maxDuration)-(Double(enemiesDestroyed)*0.5)))
-        
         let movementDuration = TimeConstant.maxDuration-Double(enemiesDestroyed)*0.03
 
         let actionMove = SKAction.move(to: CGPoint(x: size.width/2, y: size.height/2),
@@ -223,6 +222,8 @@ extension GameScene {
         let actionMoveDone = SKAction.removeFromParent()
 
         node.run(SKAction.sequence([actionMove, fadeOut, actionMoveDone]))
+        playSound(file: "tiktik", ext: "mp3")
+        audioPlayer.volume = 0.5
         
         return (movementDuration)
     }
@@ -247,6 +248,28 @@ extension GameScene {
       // to notify the scene when two physics bodies collide:
       physicsWorld.contactDelegate = self
     }
+    
+    func playSound(file:String, ext:String) -> Void {
+            do {
+                let url = URL.init(fileURLWithPath: Bundle.main.path(forResource: file, ofType: ext)!)
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer.prepareToPlay()
+                audioPlayer.play()
+            } catch let error {
+                NSLog(error.localizedDescription)
+            }
+        }
+    
+    func setPauseScreen() {
+        
+        let pauseScreen = SKSpriteNode(imageNamed: "PauseText")
+        pauseScreen.name = "pausetxt"
+        pauseScreen.size = CGSize(width: 0.5*(size.width), height: 0.3*(size.height))
+        pauseScreen.zPosition = 5
+        pauseScreen.position = CGPoint(x: size.width/2, y: size.height/2)
+        addChild(pauseScreen)
+        
+    }
 }
 
 //MARK: -Touch handling (extension)
@@ -255,11 +278,13 @@ extension GameScene {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       super.touchesBegan(touches, with: event)
+        run(SwipeSound)
         
       tracePoints.removeAll(keepingCapacity: true)
       for _ in touches {
           guard let touch = touches.first
           else { return }
+          let nodeTxt = SKSpriteNode()
           let location = touch.location(in: self)
           let nodeClicked = atPoint(touch.location(in: self))
           // if the user taps on pause button:
@@ -268,11 +293,14 @@ extension GameScene {
               if isPaused { return }
               isPaused = true
               print("Game paused")
+              run(pauseButtonSound)
               // forse dovrei lavorare con hide/unhide action
               // invece di rimuovere/ricreare il nodo ma,,,
               nodeClicked.removeFromParent()
               addResumeButton()
+//              setPauseScreen()
               musicNode.isPaused = true
+              audioPlayer.stop()
           }
           // & resume button:
           else if nodeClicked.name == "resumebtn" {
@@ -280,7 +308,11 @@ extension GameScene {
               if !isPaused { return }
               isPaused = false
               print("Game resumed")
+              run(pauseButtonSound)
               nodeClicked.removeFromParent()
+//              if nodeTxt.name == "pausetxt" {
+//                  nodeTxt.removeFromParent()
+//              }
               addPauseButton()
           }
           // if the user is just swiping on screen:
@@ -326,7 +358,7 @@ extension GameScene {
                 node.physicsBody?.isDynamic = false
                 
                 let fadeOut = SKAction.fadeOut(withDuration: 0.2)
-                let sequence = SKAction.sequence([fadeOut, .removeFromParent()])
+                let sequence = SKAction.sequence([fadeOut, hitSound, .removeFromParent()])
                 node.run(sequence)
                 enemiesDestroyed+=1
                 print("Score: \(enemiesDestroyed)")
@@ -442,6 +474,7 @@ extension GameScene {
         let pauseButton = SKSpriteNode(imageNamed: Images.pause)
         pauseButton.name = "pausebtn"
         pauseButton.position = CGPoint(x: size.width - 0.095*(size.width), y: 0.93*(size.height))
+        pauseButton.size = CGSize(width: 80, height: 85)
         pauseButton.zPosition = Layer.buttons
         addChild(pauseButton)
     }
@@ -451,6 +484,7 @@ extension GameScene {
         let resumeButton = SKSpriteNode(imageNamed: Images.resume)
         resumeButton.name = "resumebtn"
         resumeButton.position = CGPoint(x: size.width - 0.095*(size.width), y: 0.93*(size.height))
+        resumeButton.size = CGSize(width: 80, height: 85)
         resumeButton.zPosition = Layer.buttons
         addChild(resumeButton)
     }
@@ -485,6 +519,7 @@ extension GameScene {
                isInvincible = false
            }
        }
+    
    }
 
 

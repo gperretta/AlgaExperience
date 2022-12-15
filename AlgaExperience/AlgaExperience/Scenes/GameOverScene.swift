@@ -46,6 +46,10 @@ class GameOverScene: SKScene {
       retryButton.name = "retrybtn"
       retryButton.position = CGPoint(x: size.width/2, y:  0.25*(size.height))
       addChild(retryButton)
+      
+      let gameOver = SKAudioNode(fileNamed: "gameOver")
+      addChild(gameOver)
+      
    }
   // override an initializer:
   required init(coder aDecoder: NSCoder) {

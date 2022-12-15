@@ -28,8 +28,17 @@
 		7909DDF8294748D600AA0BE5 /* BUGnaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7909DDF7294748D600AA0BE5 /* BUGnaby.swift */; };
 		792C6EB3294889A6006D8F8F /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792C6EB2294889A6006D8F8F /* SplashController.swift */; };
 		792C6EB92948E541006D8F8F /* LoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792C6EB82948E541006D8F8F /* LoreScene.swift */; };
-		792C6EBB2949D52D006D8F8F /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 792C6EBA2949D52D006D8F8F /* bgMusic.mp3 */; };
 		792C6EC0294A828D006D8F8F /* BackG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792C6EBF294A828D006D8F8F /* BackG.swift */; };
+		792C6ECD294B401F006D8F8F /* enemydeadMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 792C6EC3294B401E006D8F8F /* enemydeadMusic.wav */; };
+		792C6ECE294B401F006D8F8F /* textMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 792C6EC4294B401E006D8F8F /* textMusic.wav */; };
+		792C6ECF294B401F006D8F8F /* textMusic1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 792C6EC5294B401E006D8F8F /* textMusic1.mp3 */; };
+		792C6ED0294B401F006D8F8F /* pauseMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 792C6EC6294B401E006D8F8F /* pauseMusic.mp3 */; };
+		792C6ED1294B401F006D8F8F /* tiktik.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 792C6EC7294B401E006D8F8F /* tiktik.mp3 */; };
+		792C6ED2294B401F006D8F8F /* Impact3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 792C6EC8294B401E006D8F8F /* Impact3.wav */; };
+		792C6ED3294B401F006D8F8F /* Swipe18.wav in Resources */ = {isa = PBXBuildFile; fileRef = 792C6EC9294B401E006D8F8F /* Swipe18.wav */; };
+		792C6ED4294B401F006D8F8F /* VENTO.wav in Resources */ = {isa = PBXBuildFile; fileRef = 792C6ECA294B401E006D8F8F /* VENTO.wav */; };
+		792C6ED5294B401F006D8F8F /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 792C6ECB294B401E006D8F8F /* bgMusic.mp3 */; };
+		792C6ED6294B401F006D8F8F /* gameOver.wav in Resources */ = {isa = PBXBuildFile; fileRef = 792C6ECC294B401F006D8F8F /* gameOver.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +84,17 @@
 		7909DDF7294748D600AA0BE5 /* BUGnaby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BUGnaby.swift; sourceTree = "<group>"; };
 		792C6EB2294889A6006D8F8F /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		792C6EB82948E541006D8F8F /* LoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoreScene.swift; sourceTree = "<group>"; };
-		792C6EBA2949D52D006D8F8F /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
 		792C6EBF294A828D006D8F8F /* BackG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackG.swift; sourceTree = "<group>"; };
+		792C6EC3294B401E006D8F8F /* enemydeadMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = enemydeadMusic.wav; sourceTree = "<group>"; };
+		792C6EC4294B401E006D8F8F /* textMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = textMusic.wav; sourceTree = "<group>"; };
+		792C6EC5294B401E006D8F8F /* textMusic1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = textMusic1.mp3; sourceTree = "<group>"; };
+		792C6EC6294B401E006D8F8F /* pauseMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pauseMusic.mp3; sourceTree = "<group>"; };
+		792C6EC7294B401E006D8F8F /* tiktik.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tiktik.mp3; sourceTree = "<group>"; };
+		792C6EC8294B401E006D8F8F /* Impact3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Impact3.wav; sourceTree = "<group>"; };
+		792C6EC9294B401E006D8F8F /* Swipe18.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Swipe18.wav; sourceTree = "<group>"; };
+		792C6ECA294B401E006D8F8F /* VENTO.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = VENTO.wav; sourceTree = "<group>"; };
+		792C6ECB294B401E006D8F8F /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgMusic.mp3; path = ../../../../../../../Downloads/MUSICHE/bgMusic.mp3; sourceTree = "<group>"; };
+		792C6ECC294B401F006D8F8F /* gameOver.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameOver.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +238,16 @@
 		792C6EBC2949D538006D8F8F /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				792C6EBA2949D52D006D8F8F /* bgMusic.mp3 */,
+				792C6ECB294B401E006D8F8F /* bgMusic.mp3 */,
+				792C6EC3294B401E006D8F8F /* enemydeadMusic.wav */,
+				792C6ECC294B401F006D8F8F /* gameOver.wav */,
+				792C6EC8294B401E006D8F8F /* Impact3.wav */,
+				792C6EC6294B401E006D8F8F /* pauseMusic.mp3 */,
+				792C6EC9294B401E006D8F8F /* Swipe18.wav */,
+				792C6EC4294B401E006D8F8F /* textMusic.wav */,
+				792C6EC5294B401E006D8F8F /* textMusic1.mp3 */,
+				792C6EC7294B401E006D8F8F /* tiktik.mp3 */,
+				792C6ECA294B401E006D8F8F /* VENTO.wav */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -329,14 +356,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				792C6EBB2949D52D006D8F8F /* bgMusic.mp3 in Resources */,
+				792C6ECD294B401F006D8F8F /* enemydeadMusic.wav in Resources */,
+				792C6ED4294B401F006D8F8F /* VENTO.wav in Resources */,
+				792C6ED1294B401F006D8F8F /* tiktik.mp3 in Resources */,
 				3AFE74FD293FD6E8005DAD52 /* Main.storyboard in Resources */,
+				792C6ECF294B401F006D8F8F /* textMusic1.mp3 in Resources */,
 				3AFE74FF293FD6E9005DAD52 /* Assets.xcassets in Resources */,
 				3AAD6A6F29489B0200768435 /* ModernDOS9x14.ttf in Resources */,
+				792C6ECE294B401F006D8F8F /* textMusic.wav in Resources */,
+				792C6ED3294B401F006D8F8F /* Swipe18.wav in Resources */,
 				3AFE7502293FD6E9005DAD52 /* LaunchScreen.storyboard in Resources */,
+				792C6ED5294B401F006D8F8F /* bgMusic.mp3 in Resources */,
+				792C6ED0294B401F006D8F8F /* pauseMusic.mp3 in Resources */,
 				3AAD6A7029489B0200768435 /* ModernDOS9x16.ttf in Resources */,
 				3AAD6A6D29489B0200768435 /* ModernDOS8x16.ttf in Resources */,
 				3AAD6A6E29489B0200768435 /* ModernDOS8x14.ttf in Resources */,
+				792C6ED2294B401F006D8F8F /* Impact3.wav in Resources */,
+				792C6ED6294B401F006D8F8F /* gameOver.wav in Resources */,
 				3AAD6A7129489B0200768435 /* ModernDOS8x8.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
