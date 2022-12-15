@@ -218,9 +218,10 @@ extension GameScene {
 
         let actionMove = SKAction.move(to: CGPoint(x: size.width/2, y: size.height/2),
                                      duration: movementDuration)
+        let fadeOut = SKAction.fadeOut(withDuration: 0.2)
         let actionMoveDone = SKAction.removeFromParent()
 
-        node.run(SKAction.sequence([actionMove, actionMoveDone]))
+        node.run(SKAction.sequence([actionMove, fadeOut, actionMoveDone]))
         
         return (movementDuration)
     }
