@@ -56,6 +56,7 @@ var traceFg : SKShapeNode!
 var tracePoints : [CGPoint] = []
 
 var firstLaunch : Bool = true
+//var isHit : Bool = false
 
 class GameScene: SKScene {
     var highScore : Int = 0
@@ -102,10 +103,10 @@ class GameScene: SKScene {
         let score = enemiesDestroyed
         livesLeft -= 1
         isInvincible = true
-        print("Leaves: \(livesLeft)")  // just for the test sake
+        print("Leaves: \(livesLeft)")
         //
-        //if livesLeft == 2 {reverse animation}
-        //if livesLeft == 1 {reverse animation}
+        //
+        //
         //
         if livesLeft == 0 {
             character.removeFromParent()
@@ -127,10 +128,10 @@ class GameScene: SKScene {
         } else if livesLeft > 0 {
             character.removeFromParent()
             addMainCharacter()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                print("Waiting time ended after 2 s")
-                
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                print("Waiting time ended after 2 s")
+//
+//            }
         }
     }
 }
@@ -157,13 +158,13 @@ extension GameScene {
     }
     // main character:
     func addMainCharacter() {
-        let pianta = MainCharacterNode()
+        let pianta = MainCharacterNode(lives: livesLeft)
         pianta.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         pianta.position = CGPoint(x: size.width/2, y: size.height/2)
         pianta.size = CGSize(width: 0.5*(pianta.size.width), height: 0.5*(pianta.size.height))
         pianta.zPosition = Layer.character
         addChild(pianta)
-        pianta.goesOut()
+        pianta.moves()
     }
     // opponents:
     func addEnemies() {
@@ -479,7 +480,7 @@ extension GameScene {
            if isInvincible {
                invulTime += 0.1
            }
-           if (invulTime > 10){
+           if (invulTime > 20){
                invulTime = 0
                isInvincible = false
            }
