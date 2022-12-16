@@ -284,7 +284,7 @@ extension GameScene {
       for _ in touches {
           guard let touch = touches.first
           else { return }
-          let nodeTxt = SKSpriteNode()
+//          let nodeTxt = SKSpriteNode()
           let location = touch.location(in: self)
           let nodeClicked = atPoint(touch.location(in: self))
           // if the user taps on pause button:
@@ -363,13 +363,13 @@ extension GameScene {
                 enemiesDestroyed+=1
                 print("Score: \(enemiesDestroyed)")
                 
-                if enemiesDestroyed > 100 {   // just for the test sake
-                    run(SKAction.run() {
-                        let reveal = SKTransition.push(with: .up, duration: 0.25)
-                        let scene = GameOverScene(size: self.size, won: true)
-                        self.view?.presentScene(scene, transition: reveal)
-                    })
-                }
+//                if enemiesDestroyed > 100 {   // just for the test sake
+//                    run(SKAction.run() {
+//                        let reveal = SKTransition.push(with: .up, duration: 0.25)
+//                        let scene = GameOverScene(size: self.size, won: true)
+//                        self.view?.presentScene(scene, transition: reveal)
+//                    })
+//                }
             }
         }
       }
