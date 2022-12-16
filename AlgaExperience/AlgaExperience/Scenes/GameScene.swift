@@ -66,7 +66,8 @@ class GameScene: SKScene {
     var isInvincible = false
 
     var enemiesDestroyed = 0 {
-        didSet { scoreBar.text = "SCORE: \(enemiesDestroyed)" }
+        
+        didSet { scoreBar.text = "SCORE: \(enemiesDestroyed * 10)" }
     }
     var scoreBar = SKLabelNode(fontNamed: "Modern DOS 9x16")
     var livesLeft = 3 {
@@ -106,7 +107,7 @@ class GameScene: SKScene {
     func enemyCollideAttack(enemy: SKSpriteNode, character: SKSpriteNode) {
         print("COLLIDE ATTACK SUCCEDED")
         enemy.removeFromParent()
-        let score = enemiesDestroyed * 100
+        let score = enemiesDestroyed * 10
         livesLeft -= 1
         isInvincible = true
         print("Leaves: \(livesLeft)")
@@ -235,7 +236,7 @@ extension GameScene {
             
             self.run(SKAction.repeatForever(SKAction.sequence([
                 SKAction.run(self.addEnemies),
-                SKAction.wait(forDuration: (TimeConstant.waitTime-Double(self.enemiesDestroyed)*0.02))
+                SKAction.wait(forDuration: (TimeConstant.waitTime-Double(self.enemiesDestroyed)*0.2))
             ])
             ))
         }
@@ -361,7 +362,7 @@ extension GameScene {
                 let fadeOut = SKAction.fadeOut(withDuration: 0.2)
                 let sequence = SKAction.sequence([fadeOut, hitSound, .removeFromParent()])
                 node.run(sequence)
-                UserDefaults.standard.set(enemiesDestroyed*100, forKey: "score")
+                
                 enemiesDestroyed+=1
                 print("Score: \(enemiesDestroyed)")
                 
@@ -502,9 +503,9 @@ extension GameScene {
     }
     
     func showScore() {
-        
+        var textedScore = enemiesDestroyed * 10
         scoreBar.name = "livesBar"
-        scoreBar.text = "SCORE: \(enemiesDestroyed)"
+        scoreBar.text = "SCORE: \(textedScore)"
         scoreBar.fontSize = 28
         scoreBar.color = SKColor.white
         scoreBar.position = CGPoint(x: 0.15*(size.width), y: 0.85*(size.height))
