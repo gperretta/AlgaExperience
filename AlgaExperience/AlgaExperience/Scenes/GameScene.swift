@@ -68,7 +68,7 @@ class GameScene: SKScene {
     var enemiesDestroyed = 0 {
         didSet { scoreBar.text = "SCORE: \(enemiesDestroyed)" }
     }
-    var scoreBar = SKLabelNode()
+    var scoreBar = SKLabelNode(fontNamed: "Modern DOS 9x16")
     var livesLeft = 3 {
         didSet { livesLeftBar.text = "LIVES: \(livesLeft)/3" }
     }
@@ -106,15 +106,15 @@ class GameScene: SKScene {
     func enemyCollideAttack(enemy: SKSpriteNode, character: SKSpriteNode) {
         print("COLLIDE ATTACK SUCCEDED")
         enemy.removeFromParent()
-        let score = enemiesDestroyed
+        let score = enemiesDestroyed * 100
         livesLeft -= 1
         isInvincible = true
         print("Leaves: \(livesLeft)")
         run(plantHitSound)
-        
+        let oldHighScore = UserDefaults.standard.integer(forKey: "highScore")
         if livesLeft == 0 {
             character.removeFromParent()
-            if(enemiesDestroyed>highScore){
+            if(score>oldHighScore){
                 highScore = score
                 UserDefaults.standard.set(highScore, forKey: "highScore")
                 UserDefaults.standard.set(score, forKey: "score")
@@ -344,6 +344,7 @@ extension GameScene {
         guard let touch = touches.first
         else { return }
         let location = touch.location(in: self)
+        
 
         tracePoints.append(location)
         redrawSwipeTrace()
@@ -360,6 +361,7 @@ extension GameScene {
                 let fadeOut = SKAction.fadeOut(withDuration: 0.2)
                 let sequence = SKAction.sequence([fadeOut, hitSound, .removeFromParent()])
                 node.run(sequence)
+                UserDefaults.standard.set(enemiesDestroyed*100, forKey: "score")
                 enemiesDestroyed+=1
                 print("Score: \(enemiesDestroyed)")
                 
@@ -466,7 +468,7 @@ extension GameScene {
         
         addPauseButton()
         //showLivesLeft()
-        //showScore()
+        showScore()
     }
     
     func addPauseButton() {
@@ -505,7 +507,8 @@ extension GameScene {
         scoreBar.text = "SCORE: \(enemiesDestroyed)"
         scoreBar.fontSize = 28
         scoreBar.color = SKColor.white
-        scoreBar.position = CGPoint(x: size.width - 0.1*(size.width), y: 0.9*(size.height))
+        scoreBar.position = CGPoint(x: 0.15*(size.width), y: 0.85*(size.height))
+        scoreBar.zPosition = 5
         addChild(scoreBar)
     }
     
