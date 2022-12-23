@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>ModernDOS9x16.ttf</string>
+		<string>ModernDOS9x14.ttf</string>
+		<string>ModernDOS8x8.ttf</string>
+		<string>ModernDOS8x16.ttf</string>
+		<string>ModernDOS8x14.ttf</string>
+	</array>
+</dict>
+</plist>

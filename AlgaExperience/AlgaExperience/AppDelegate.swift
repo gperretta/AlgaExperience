@@ -6,13 +6,25 @@
 //
 
 import UIKit
+import AVFoundation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+   
     var window: UIWindow?
-
-
+    var audioPlayer = AVAudioPlayer()
+    
+    func playSound(file:String, ext:String) -> Void {
+            do {
+                let url = URL.init(fileURLWithPath: Bundle.main.path(forResource: file, ofType: ext)!)
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer.prepareToPlay()
+                audioPlayer.play()
+            } catch let error {
+                NSLog(error.localizedDescription)
+            }
+        }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
