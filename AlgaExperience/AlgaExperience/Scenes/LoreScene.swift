@@ -15,7 +15,7 @@ class LoreScene: SKScene {
         
     backgroundColor = SKColor.black
       
-      let background3 = BackG()
+      let background3 = LoreBackground()
         background3.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         background3.position = CGPoint(x: size.width/2, y: size.height/2)
         background3.zPosition = Layer.background

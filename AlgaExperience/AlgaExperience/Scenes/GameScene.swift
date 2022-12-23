@@ -75,7 +75,7 @@ class GameScene: SKScene {
     }
     var livesLeftBar = SKLabelNode(fontNamed: "Modern DOS 9x16")
     var touchLocation : CGPoint = CGPoint(x: 0, y: 0)
-    let musicNode = SKAudioNode(fileNamed: "bgMusic")
+    let musicNode = SKAudioNode(fileNamed: "backgroundMusic")
     let hitSound = SKAction.playSoundFileNamed("enemydeadMusic", waitForCompletion: false)
         let pauseButtonSound = SKAction.playSoundFileNamed("pauseMusic", waitForCompletion: false)
         let plantHitSound = SKAction.playSoundFileNamed("Impact3", waitForCompletion: false)
@@ -170,7 +170,7 @@ extension GameScene {
     }
     // opponents:
     func addEnemies() {
-        let enemy = BUGnaby()
+        let enemy = BugnabyNode()
         enemy.name = "enemies"
         enemy.size = CGSize(width: 52, height: 52)
         // DA RIVEDERE questa parte perché da qui inizia tanto codice inutile sec me

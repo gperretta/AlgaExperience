@@ -13,7 +13,7 @@ enum BackgAnimationType: String {
     case animate
 }
 
-class BackG : SKSpriteNode {
+class LoreBackground : SKSpriteNode {
     // MARK: -Properties
     private var animateTextures: [SKTexture]?
     

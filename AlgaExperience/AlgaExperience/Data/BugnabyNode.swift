@@ -13,7 +13,7 @@ enum EnemyAnimationType: String {
     case walk
 }
 
-class BUGnaby : SKSpriteNode {
+class BugnabyNode : SKSpriteNode {
     // MARK: -Properties
     //Texture (Animation)
     private var walkTextures: [SKTexture]? //hold the walk texture
