@@ -16,15 +16,11 @@ As the sprout is the last and only hope of the planet, the player's mission is t
 
 <h3>Table of contents</h3>
  
-Gameplay and game mechanics
-
-Challenges and score system
-
-Technologies
-
-Visual and audio
-
-Process
+<a href="https://github.com/gperretta/AlgaExperience/blob/main/README.md#gameplay-and-game-mechanics">Gameplay and game mechanics</a></br>
+<a href="https://github.com/gperretta/AlgaExperience/blob/main/README.md#challenges-and-score-system">Challenges and score system</a></br>
+<a href="https://github.com/gperretta/AlgaExperience/blob/main/README.md#technologies">Technologies</a></br>
+<a href="https://github.com/gperretta/AlgaExperience/blob/main/README.md#visual-and-audio">Visual and audio</a></br>
+<a href="https://github.com/gperretta/AlgaExperience/blob/main/README.md#process">Process</a></br>
   
 <br/><br/>
 ![Group-1](https://user-images.githubusercontent.com/113616815/216680862-2ce8eef5-4923-4d78-9cee-17a5d8c5b758.png)
