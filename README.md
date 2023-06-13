@@ -45,12 +45,17 @@ The highest score will be saved each time using Apple's UserDefaults and then it
   <h2>Visual and audio</h2>
 
 The whole game is pixel-art-styled with a strong callback to the 80s. 
-All the game assets were created from scratch using Aseprite, a pixel-art tool and image editor. 
+All the game assets were created from scratch using Aseprite, a pixel-art tool and image editor, by the team's designers. 
 On the other hand, the audio was created by playing real instruments or recording voices and sounds and editing the tracks and noises obtained with Apple's GarageBand. 
 
   <h2>Process</h2>
 
-Sprout is a product of a two-weeks project in a team of four. 
-We started with a big brainstorming session, which had to be completed in two days to respect the given deadlines. After a research session about feasibility and SpriteKit, a framework we were using for the first time, the game design phase began and briefly after we started coding it. 
-At first, we encountered a few struggles with physics, rigid bodies and collision mask, but working as a team and with the support of official resources and mentors (and some web surfing) we were able to deliver a complete product, with an intuitive backstory and a catchy gameplay. 
+Sprout is a product of a two-weeks project at the Apple Developer Academy. I've been able to work in a team of four, with another developer and two designers.
+
+<h2> Personal contribution </h2>
+
+My main tasks have been:
+- game scenes and nodes rendering,
+- core game mechanics implementation with swipe gestures reading,
+- score system.
 
